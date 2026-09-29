@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Indicar um craque — Hall da Fama do Futebol</title>
+  <meta name="description" content="Formulário para indicar um jogador ao Hall da Fama do Futebol.">
+</head>
+<body>
+
+  <header id="topo">
+    <p><strong>Hall da Fama do Futebol</strong><br>
+    <small>Os maiores jogadores da história, reunidos em um só lugar</small></p>
+
+    <nav aria-label="Navegação principal">
+      <a href="index.html">Início</a> |
+      <a href="lendas.html">Lendas</a> |
+      <a href="era-moderna.html">Era moderna</a> |
+      <a href="numeros.html">Números</a> |
+      <a href="indicacao.html"><strong>Indicar um craque</strong></a>
+    </nav>
+    <hr>
+  </header>
+
+  <main id="conteudo">
+    <h1>Indicar um craque ao Hall da Fama</h1>
+    <p>
+      Sentiu falta de alguém? Preencha o formulário e conte por que esse jogador merece
+      entrar. Campos com <strong>*</strong> são obrigatórios.
+    </p>
+
+    <section>
+      <h2 id="titulo-form">Formulário de indicação</h2>
+
+      <form action="#" method="get">
+
+        <fieldset>
+          <legend>Quem está indicando</legend>
+
+          <p>
+            <label for="nome">Seu nome *</label><br>
+            <input type="text" id="nome" name="nome" required minlength="3" placeholder="Ex.: Maria da Silva" autocomplete="name">
+          </p>
+
+          <p>
+            <label for="email">Seu e-mail *</label><br>
+            <input type="email" id="email" name="email" required placeholder="nome@exemplo.com.br" autocomplete="email">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>O jogador indicado</legend>
+
+          <p>
+            <label for="jogador">Nome do jogador *</label><br>
+            <input type="text" id="jogador" name="jogador" list="jogadores" required placeholder="Digite ou escolha uma sugestão" autocomplete="off">
+            <datalist id="jogadores">
+              <option value="Ronaldinho Gaúcho">
+              <option value="Kaká">
+              <option value="Neymar">
+              <option value="Zico">
+              <option value="Romário">
+              <option value="Michel Platini">
+              <option value="Marco van Basten">
+              <option value="Ferenc Puskás">
+              <option value="Paolo Maldini">
+              <option value="Xavi">
+              <option value="Andrés Iniesta">
+              <option value="Thierry Henry">
+            </datalist>
+          </p>
+
+          <p>
+            <label for="pais">País da seleção</label><br>
+            <input type="text" id="pais" name="pais" list="paises" placeholder="Ex.: Brasil">
+            <datalist id="paises">
+              <option value="Alemanha">
+              <option value="Argentina">
+              <option value="Brasil">
+              <option value="Espanha">
+              <option value="França">
+              <option value="Holanda">
+              <option value="Hungria">
+              <option value="Itália">
+              <option value="Portugal">
+              <option value="Uruguai">
+            </datalist>
+          </p>
+
+          <p>
+            <label for="nascimento">Data de nascimento do jogador</label><br>
+            <input type="date" id="nascimento" name="nascimento" min="1900-01-01" max="2010-12-31">
+          </p>
+
+          <p>
+            <label for="jogo">Data da partida inesquecível *</label><br>
+            <input type="date" id="jogo" name="jogo" required max="2026-09-29">
+            <br><small>Escolha um jogo que, para você, resume a grandeza do jogador.</small>
+          </p>
+
+          <p>
+            <span id="rotulo-epoca">Época principal *</span><br>
+            <label><input type="radio" name="epoca" value="antes-1990" required> Até 1989</label>
+            <label><input type="radio" name="epoca" value="1990-2009"> 1990 a 2009</label>
+            <label><input type="radio" name="epoca" value="2010-hoje"> De 2010 em diante</label>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sua avaliação</legend>
+
+          <p>
+            <label for="nota">Nota de 0 a 10 para o jogador</label><br>
+            <input type="range" id="nota" name="nota" min="0" max="10" step="1" value="8" list="marcas-nota">
+            <datalist id="marcas-nota">
+              <option value="0" label="0">
+              <option value="5" label="5">
+              <option value="10" label="10">
+            </datalist>
+            <br><small>Arraste ou use as setas do teclado.</small>
+          </p>
+
+          <p>
+            <label for="justificativa">Por que ele merece entrar? *</label><br>
+            <textarea id="justificativa" name="justificativa" rows="6" cols="50" required minlength="30" maxlength="600" placeholder="Fale de títulos, prêmios, jogos marcantes e influência no futebol (mínimo de 30 caracteres)."></textarea>
+          </p>
+
+          <p>
+            <label for="arquivo">Foto ou vídeo de um lance marcante</label><br>
+            <input type="file" id="arquivo" name="arquivo" accept="image/*,video/*">
+            <br><small>Opcional. Imagens ou vídeos curtos.</small>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Confirmação</legend>
+          <p>
+            <input type="checkbox" id="aceite" name="aceite" required>
+            <label for="aceite">Confirmo que as informações são verdadeiras e que aceito receber a resposta por e-mail. *</label>
+          </p>
+        </fieldset>
+
+        <p>
+          <button type="submit">Enviar indicação</button>
+          <button type="reset">Limpar campos</button>
+        </p>
+      </form>
+    </section>
+
+    <hr>
+
+    <section>
+      <h2 id="titulo-regras">Antes de enviar</h2>
+
+      <details>
+        <summary>O que torna uma indicação forte?</summary>
+        <p>
+          Cite fatos verificáveis: títulos, prêmios individuais, recordes e partidas
+          decisivas. Explique também a influência do jogador: ele criou um estilo,
+          uma função ou uma jogada?
+        </p>
+      </details>
+
+      <details>
+        <summary>O que acontece depois do envio?</summary>
+        <p>
+          Neste projeto didático o formulário só valida os campos e não envia os dados
+          a nenhum servidor. Em um site real, o atributo <code>action</code> apontaria
+          para um serviço que receberia as indicações.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <hr>
+    <nav>
+      <a href="#topo">Voltar ao topo</a>
+    </nav>
+    <p><small>© 2026 Hall da Fama do Futebol — Gabriel Gregol Nunes Lucena.</small></p>
+  </footer>
+
+</body>
+</html>
